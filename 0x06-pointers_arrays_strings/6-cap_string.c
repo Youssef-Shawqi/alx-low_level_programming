@@ -1,43 +1,43 @@
-#include "main.h"
-
 /**
- * *cap_string - capitalize words
- * @str: pointer
- * Return: capitalzied string
-*/
-
-char *cap_string(char *str)
+ * cap_string - a function that capitalizes
+ *		all words of a string
+ *
+ * @s: pointer to char input array
+ *
+ * Return: @s
+ */
+char *cap_string(char *s)
 {
-char sep[] = ",\t;\n; .!?\"(){}";
-int flag, i, ii;
+	int i = 0;
 
-for (i = 0; str[i] != '\0'; i++)
-{
-	flag = 0;
-
-	if (i == 0)
+	/*iterate through our array values*/
+	while (s[i] != '\0')
 	{
-		flag = 1;
-	}
-	else
-	{
-		for (ii = 0; sep[ii] != '\0'; ii++)
+		/*check for any lowercase letters*/
+		if (s[i] >= 97 && s[i] <= 122)
 		{
-			if (str[i - 1] == sep[ii])
+			/**
+			 * if we have a null character
+			 * change its value to capital
+			 */
+			if (i == 0)
 			{
-				flag = 1;
-				break;
+				s[i] -= 32;
+			}
+			/**
+			 * if we find any character matching the below before any small
+			 * letter we change that value to a capital letter.
+			 */
+			if (s[i - 1] == 32 || s[i - 1] == 9 || s[i - 1] == 10 ||
+					s[i - 1] == 44 || s[i - 1] == 59 || s[i - 1] == 46 ||
+					s[i - 1] == 33 || s[i - 1] == 63 || s[i - 1] == 34 ||
+					s[i - 1] == 40 || s[i - 1] == 41 || s[i - 1] == 123 ||
+					s[i - 1] == 124)
+			{
+				s[i] -= 32;
 			}
 		}
+		i++;
 	}
-
-	if (flag == 1)
-	{
-		if (str[i] <= 'z' && str[i] >= 'a')
-		{
-			str[i] -= ('a' - 'A');
-		}
-	}
-}
-return (str);
+	return (s);
 }
