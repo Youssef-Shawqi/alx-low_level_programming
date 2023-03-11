@@ -1,12 +1,24 @@
+#include "main.h"
+
+
+
 /**
- * _isdigit - Entery point.
+ * _isdigit - checks for a digit (0 theough 9)
+ * @num: int to be checked
+ * Return: 1 if num is a digit, 0 otherwise.
  *
- * Description: checks for a digit (0 through 9).
- * @c: Character to check.
- *
- * Return: 1 or 0.
  */
-int _isdigit(int c)
+
+
+
+int _isdigit(int num)
+
+
+
 {
-	return (c >= 48 && c <= 57);
+
+	return (num >= '0' && num <= '9');
+
+
+
 }

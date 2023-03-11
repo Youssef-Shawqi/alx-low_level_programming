@@ -1,12 +1,23 @@
+#include "main.h"
+
 /**
- * _isupper - Entery point.
- *
- * Description: checks for uppercase character.
- * @c: Character to check.
- *
- * Return: 1 or 0.
+ * _isupper - checks for uppercase character
+ * @letter: the chracter to be tracked
+ * Return: 1 if c is uppercase, 0 otherwise
  */
-int _isupper(char c)
+
+
+
+int _isupper(int letter)
+
+
+
 {
-	return (c >= 65 && c <= 90);
+
+
+
+	return (letter >= 'A' && letter <= 'Z');
+
+
+
 }

@@ -1,17 +1,17 @@
 /**
- * _strlen - Entry point.
+ * _strlen - returns the length of a string
  *
- * Description: returns the length of a string.
- * @s: Pointer to the String.
+ * @s: string parameter input
  *
- * Return: (int) - String Length.
+ * Return: length of string
  */
+
 int _strlen(char *s)
 {
-	int length = 0;
+	int counter;
 
-	while (s[length] != '\0')
-		length++;
+	for (counter = 0; *s != '\0'; ++s)
+		++counter;
 
-	return (length);
+	return (counter);
 }
